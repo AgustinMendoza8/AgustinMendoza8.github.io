@@ -102,12 +102,12 @@ function aboutpageload(){
 function load(){
 
     if(analytical){
-        $("#linesvg1").fadeOut(1)
+        $("#linesvg1").fadeOut(1);
         $("#analytical").animate({width:"100%"},350);
         
     }
     if(aesthetic){
-        
+        $("#linesvg1").fadeOut(1);
         var a = $("#aesthetic").offset().left
         $("#aesthetic").css({left:a}).animate({width:"100%",left:"0%"},350);
     }
