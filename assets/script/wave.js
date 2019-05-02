@@ -32,7 +32,6 @@ function wave() {
     $(".about").click(function(){
         $("#analytical").fadeOut(950);
         $("#aesthetic").fadeOut(950);
-        clicked = true;
         about = true;
     })
 
@@ -55,18 +54,16 @@ function wave() {
     t += 0.265
     $("#analytical").click(function(){
         $("#aesthetic").fadeOut(950);
-        clicked = true;
         analytical=true;
     })
     $("#aesthetic").click(function(){
         $("#analytical").fadeOut(950);
-        clicked = true;
         aesthetic = true;
     })
 
 
 
-    if(clicked && analytical ||clicked && aesthetic ){
+    if(analytical || aesthetic ){
         amp*=.95;
         if(amp<= 0.2 && !about){
             amp*=0;
@@ -77,24 +74,41 @@ function wave() {
         }
     } 
 
-    if(clicked && about){
+    if(about){
         amp*=.99;
       
         requestAnimationFrame(wave);
         aboutpageload();
+        stop();
         return;
-        
     } 
+
+
+
     requestAnimationFrame(wave);
 
 
 
 }
+
+
+function aboutpageloadfromother(){
+    $(".icon1").fadeOut();
+
+    
+}
+
+
 function aboutpageload(){
-    console.log("here")
-    $(".loadbarright").delay(1225).slideUp(1000);
-    $(".loadbarleft").delay(1224.5).slideUp(1000);
-    $('.divider').delay(950).slideUp(1000);
+
+    if(about && !(analytical||aesthetic)){
+        $(".loadbarright").delay(1225).slideUp(1000);
+        $(".loadbarleft").delay(1224.5).slideUp(1000);
+        $('.divider').delay(950).slideUp(1000);
+    }else{
+
+
+    }
     
 }
 
@@ -104,17 +118,32 @@ function load(){
     if(analytical){
         $("#linesvg1").fadeOut(1);
         $("#analytical").animate({width:"100%"},350);
+        $(".icon1").animate({left:"54%"},350);
+        $(".antext").animate({left:"66%"},350);
+        $('.divider').fadeOut(400);
+        $(".antext").fadeOut();
+
+
+  
         
     }
     if(aesthetic){
         $("#linesvg1").fadeOut(1);
         var a = $("#aesthetic").offset().left
         $("#aesthetic").css({left:a}).animate({width:"100%",left:"0%"},350);
+        $(".icon2").animate({left:"49%"},350);
+        $(".aestext").animate({left:"49%"},350);
+        $('.divider').fadeOut(400);
+        $(".aestext").fadeOut();
+
     }
 }
 
+wave();
 
-    wave();
+
+
+
 
 
 

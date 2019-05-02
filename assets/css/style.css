@@ -59,18 +59,22 @@ body{
 
 
 .icon1{
-    width: 40%;
-    height: 40%;
+    position: fixed;
+    width: 35%;
+    height: 35%;
     
-    left: 0%;
-    top: 30%;
+    left: 28%;
+    margin-left: -20.75%;
+    top: 15%;
 }
 .icon2{
+    position: fixed;
     width: 40%;
     height: 40%;
     
-    left: 0%;
-    top: 30%;
+    left: 75%;
+    margin-left: -18.75%;
+    top: 15%;
 }
 
 .icon1:hover{
@@ -112,11 +116,11 @@ body{
 
 .aboutpic{
     position: fixed;
-    width: 20%;
-    height: 60%;
     top: 14%;
     left: 50%;
     margin-left: -10%;
+    max-width: 20%;
+    height: auto;
     
 }
 
@@ -132,6 +136,17 @@ body{
     position:fixed;
     height: 88.24%;
 }
+.antext{
+    left: 40%;
+    margin-left: -20.75%;
+    top:49%;
+    font-family: 'Roboto Slab', serif;
+    position: fixed;
+    font-size: 175%;
+    height: 11.76%;
+    width: 20%;
+    color:#1a1423; 
+}
 #aesthetic{
     left: 49.20%;
     top:11.76%;
@@ -142,6 +157,17 @@ body{
     justify-content: center;
     background-color:#fcfcfc;
     
+}
+.aestext{
+    left: 75%;
+    margin-left: -2.25%;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    font-size: 175%;
+    top:50%;
+    height: 11.76%;
+    width: 20%;
+    color:#1a1423; 
 }
 
 
@@ -178,8 +204,10 @@ body{
     cursor: pointer; 
 }
 
+
+
 .a{
-    color: #fcfcfc;
+
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     color: #fcfcfc;
